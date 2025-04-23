@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, Enum, DateTime, CheckCons
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
-from app.database import Base
+from app.db.base import Base
 import enum
 
 frequency_valid = CheckConstraint("frequency BETWEEN 1 AND 12", name="frequency_valid")
@@ -12,7 +12,7 @@ class ReqStatus(enum.Enum):
     PENDING = "pending"
     REJECTED = "rejected"
     APPROVED = "approved"
-    COMPLITED = "complited"
+    COMPLETED = "complEted"
 
 
 class LoanReq(Base):

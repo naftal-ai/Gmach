@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, Enum, DateTime, Date, Boo
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
-from app.database import Base
+from app.db.base import Base
 from models.loan_req import collection_day_valid, frequency_valid
 import enum
 

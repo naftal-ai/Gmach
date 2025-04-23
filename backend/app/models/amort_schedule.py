@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, Enum, DateTime, Date, For
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
-from app.database import Base
+from app.db.base import Base
 
 
 class AmortSchedule(Base):

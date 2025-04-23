@@ -5,7 +5,7 @@ from app.db.base import Base
 
 
 class Borrower(Base):
-    __tablename__ = "borrwers"
+    __tablename__ = "borrowers"
 
     req_id = Column(Integer, ForeignKey("loan_req.req_id", ondelete="CASCADE"), nullable=False)
     borrower_id = Column(Integer, ForeignKey("customers.customer_id"), nullable=False)
