@@ -13,7 +13,7 @@ class Loan(Base):
     loan_id = Column(Integer, autoincrement=True, primary_key=True, index=True)
     req_id = Column(Integer, ForeignKey("loan_req.req_id"), nullable=False)
     amount = Column(Float, nullable=False)
-    payments = Column(Integer, default=12)
+    payments_no = Column(Integer, default=12)
     frequency = Column(Integer, frequency_valid, nullable=False, default=1)
     created_at = Column(DateTime, server_default=func.now())
     is_active = Column(Boolean, default=True)
@@ -25,3 +25,4 @@ class Loan(Base):
 
     loan_req = relationship("LoanReq", back_populates="loans")
     amort_schedule = relationship("AmortSchedule", back_populates="loan")
+    payments = relationship("Payment", back_populates="loans")

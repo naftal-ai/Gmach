@@ -20,7 +20,7 @@ class LoanReq(Base):
 
     req_id = Column(Integer, autoincrement=True, primary_key=True, index=True)
     amount = Column(Float, nullable=False)
-    payments = Column(Integer, default=12)
+    payments_no = Column(Integer, default=12)
     frequency = Column(Integer, frequency_valid, nullable=False, default=1)
     purpose = Column(String(255))
     opened_at = Column(DateTime, server_default=func.now())
@@ -40,3 +40,4 @@ class LoanReq(Base):
     borrowers = relationship("Borrower", back_populates="loan_req")
     guarantors = relationship("Guarantor", back_populates="loan_req")
     loans = relationship("Loan", back_populates="loan_req")
+    payments = relationship("Payment", back_populates="loan_req")

@@ -15,4 +15,5 @@ class AmortSchedule(Base):
     is_paid = Column(Boolean, default=False)
 
     loan = relationship("Loan", back_populates="amort_schedule")
+    payments = relationship("Payment", back_populates="amort_schedule")
  
